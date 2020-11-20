@@ -16,12 +16,12 @@ namespace CCO1.BO
         public string Departement { get; set; }
 
 
-        public etudiant()
+        public Etudiant()
         {
 
         }
 
-        public etudiant(string nom, string prenom, string dateNaissance, string dateAdmission, string matricule, string departement)
+        public Etudiant(string nom, string prenom, string dateNaissance, string dateAdmission, string matricule, string departement)
         {
             Nom = nom;
             Prenom = prenom;
@@ -33,16 +33,16 @@ namespace CCO1.BO
     }
         public override bool Equals(object obj)
         {
-            return obj is etudiant  Etudiant &&
-                   Reference.Equals(.Reference, StringComparison.OrdinalIgnoreCase);
+            return obj is Etudiant  etudiant &&
+                   Nom.Equals(etudiant.Nom, StringComparison.OrdinalIgnoreCase);
         }
 
         public override int GetHashCode()
         {
-            return -1304721846 + EqualityComparer<string>.Default.GetHashCode(Reference);
+            return -1304721846 + EqualityComparer<string>.Default.GetHashCode(Nom);
         }
     }
 
 }
-}
+
 

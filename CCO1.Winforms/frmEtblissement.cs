@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace CCO1.Winforms
 {
-    public partial class Form1 : Form
+    public partial class frmEtblissement : Form
     {
-        public Form1()
+        public frmEtblissement()
         {
             InitializeComponent();
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
