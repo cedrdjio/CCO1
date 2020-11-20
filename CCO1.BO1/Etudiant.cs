@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CCO1.BO
 {
-    public class etudiant
+    public class Etudiant
     {
         public string Nom { get; set; }
         public string Prenom { get; set; }

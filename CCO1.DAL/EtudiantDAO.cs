@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace CCO1.DAL
 {
-    public class EtudianDal
+    public class EtudiantDAO
     {
-        private static List<etudiant> Etudiant;
+        private static List<Etudiant> Etudiant;
         private const string FILE_NAME = @"Etudiant.json";
         private readonly string dbFolder;
         private FileInfo file;
-        public EtudianDal(string dbFolder)
+        public EtudiantDAO(string dbFolder)
         {
             this.dbFolder = dbFolder;
             file = new FileInfo(Path.Combine(this.dbFolder, FILE_NAME));
@@ -34,16 +34,16 @@ namespace CCO1.DAL
                 using (StreamReader sr = new StreamReader(file.FullName))
                 {
                     string json = sr.ReadToEnd();
-                    Etudiant = JsonConvert.DeserializeObject<List<etudiant>>(json);
+                    Etudiant = JsonConvert.DeserializeObject<List<Etudiant>>(json);
                 }
             }
             if (Etudiant == null)
             {
-                Etudiant = new List<etudiant>();
+                Etudiant = new List<Etudiant>();
             }
         }
 
-        public void Set(etudiant oldProduct, etudiant newProduct)
+        public void Set(Etudiant oldProduct, Etudiant newProduct)
         {
             var oldIndex = Etudiant.IndexOf(oldProduct);
             var newIndex = Etudiant.IndexOf(newProduct);
@@ -55,7 +55,7 @@ namespace CCO1.DAL
             Save();
         }
 
-        public void Add(etudiant Etudiant)
+        public void Add(Etudiant etudiant)
         {
             var index = Etudiant.IndexOf(etudiant);
             if (index >= 0)
@@ -73,20 +73,20 @@ namespace CCO1.DAL
             }
         }
 
-        public void Remove(etudiant Etudiant)
+        public void Remove(Etudiant etudiant)
         {
             Etudiant.Remove(etudiant);//base sur Product.Equals redefini
             Save();
         }
 
-        public IEnumerable<etudiant> Find()
+        public IEnumerable<Etudiant> Find()
         {
-            return new List<etudiant>(Etudiant);
+            return new List<Etudiant>(Etudiant);
         }
 
-        public IEnumerable<etudiant> Find(Func<etudiant, bool> predicate)
+        public IEnumerable<Etudiant> Find(Func<Etudiant, bool> predicate)
         {
-            return new List<etudiant>(Etudiant.Where(predicate).ToArray());
+            return new List<Etudiant>(Etudiant.Where(predicate).ToArray());
         }
     }
 }
