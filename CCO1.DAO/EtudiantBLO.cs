@@ -1,5 +1,5 @@
-﻿using CCO1.BO;
-using CCO1.DAL;
+﻿using CCO1.DAL;
+using CCO1.BO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,7 +42,7 @@ namespace CCO1.BLL
             return etudiantRepo.Find(predicate);
         }
 
-        public void EditProduct(Etudiant oldEtudiant, Etudiant newEtudiant)
+        public void EditEtudiant(Etudiant oldEtudiant, Etudiant newEtudiant)
         {
             etudiantRepo.Set(oldEtudiant, newEtudiant);
         }

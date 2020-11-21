@@ -1,4 +1,6 @@
-﻿namespace CCO1.Winforms
+﻿using System;
+
+namespace CCO1.WinForms
 {
     partial class Frmetudiant
     {
@@ -28,8 +30,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dtpNaissance = new System.Windows.Forms.DateTimePicker();
             this.lblAt = new System.Windows.Forms.Label();
             this.lblTel = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
@@ -40,7 +42,7 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtPrenom = new System.Windows.Forms.TextBox();
             this.picRemover = new System.Windows.Forms.Button();
             this.lblPhoto = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -51,35 +53,37 @@
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblBornDate = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.txtNom = new System.Windows.Forms.TextBox();
+            this.imgPhoto = new System.Windows.Forms.PictureBox();
+            this.dtpAdmission = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEtablissement = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.NTtxtMatricule = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDepartement = new System.Windows.Forms.TextBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.imgMatricule = new System.Windows.Forms.PictureBox();
+            this.lbMatricule = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtSex = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPhoto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMatricule)).BeginInit();
             this.SuspendLayout();
             // 
-            // dateTimePicker1
+            // dtpNaissance
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy/MM/dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(2, 240);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(162, 32);
-            this.dateTimePicker1.TabIndex = 2;
-            this.dateTimePicker1.Value = new System.DateTime(2020, 5, 8, 0, 0, 0, 0);
+            this.dtpNaissance.CustomFormat = "yyyy/MM/dd";
+            this.dtpNaissance.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNaissance.Location = new System.Drawing.Point(2, 240);
+            this.dtpNaissance.Name = "dtpNaissance";
+            this.dtpNaissance.Size = new System.Drawing.Size(162, 32);
+            this.dtpNaissance.TabIndex = 2;
+            this.dtpNaissance.Value = new System.DateTime(2020, 5, 8, 0, 0, 0, 0);
             // 
             // lblAt
             // 
@@ -118,8 +122,8 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,12 +200,12 @@
             this.lblLastName.TabIndex = 62;
             this.lblLastName.Text = "PRENOM :";
             // 
-            // txtLastName
+            // txtPrenom
             // 
-            this.txtLastName.Location = new System.Drawing.Point(2, 101);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(162, 32);
-            this.txtLastName.TabIndex = 1;
+            this.txtPrenom.Location = new System.Drawing.Point(2, 101);
+            this.txtPrenom.Name = "txtPrenom";
+            this.txtPrenom.Size = new System.Drawing.Size(162, 32);
+            this.txtPrenom.TabIndex = 1;
             // 
             // picRemover
             // 
@@ -209,7 +213,7 @@
             this.picRemover.FlatAppearance.BorderSize = 0;
             this.picRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.picRemover.ForeColor = System.Drawing.Color.Red;
-            this.picRemover.Location = new System.Drawing.Point(339, 294);
+            this.picRemover.Location = new System.Drawing.Point(326, 323);
             this.picRemover.Name = "picRemover";
             this.picRemover.Size = new System.Drawing.Size(33, 33);
             this.picRemover.TabIndex = 60;
@@ -221,7 +225,7 @@
             this.lblPhoto.AutoSize = true;
             this.lblPhoto.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoto.ForeColor = System.Drawing.Color.Azure;
-            this.lblPhoto.Location = new System.Drawing.Point(202, 304);
+            this.lblPhoto.Location = new System.Drawing.Point(189, 333);
             this.lblPhoto.Name = "lblPhoto";
             this.lblPhoto.Size = new System.Drawing.Size(78, 26);
             this.lblPhoto.TabIndex = 57;
@@ -302,7 +306,7 @@
             this.lblBornDate.AutoSize = true;
             this.lblBornDate.BackColor = System.Drawing.Color.Transparent;
             this.lblBornDate.ForeColor = System.Drawing.Color.Azure;
-            this.lblBornDate.Location = new System.Drawing.Point(-3, 200);
+            this.lblBornDate.Location = new System.Drawing.Point(-3, 205);
             this.lblBornDate.Name = "lblBornDate";
             this.lblBornDate.Size = new System.Drawing.Size(204, 26);
             this.lblBornDate.TabIndex = 49;
@@ -319,32 +323,32 @@
             this.lblFirstName.TabIndex = 48;
             this.lblFirstName.Text = "NOM :";
             // 
-            // txtFirstName
+            // txtNom
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(2, 37);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(162, 32);
-            this.txtFirstName.TabIndex = 0;
+            this.txtNom.Location = new System.Drawing.Point(2, 37);
+            this.txtNom.Name = "txtNom";
+            this.txtNom.Size = new System.Drawing.Size(162, 32);
+            this.txtNom.TabIndex = 0;
             // 
-            // pictureBox1
+            // imgPhoto
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Location = new System.Drawing.Point(184, 333);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(188, 136);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
+            this.imgPhoto.BackColor = System.Drawing.Color.White;
+            this.imgPhoto.Location = new System.Drawing.Point(184, 373);
+            this.imgPhoto.Name = "imgPhoto";
+            this.imgPhoto.Size = new System.Drawing.Size(188, 96);
+            this.imgPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgPhoto.TabIndex = 46;
+            this.imgPhoto.TabStop = false;
             // 
-            // dateTimePicker2
+            // dtpAdmission
             // 
-            this.dateTimePicker2.CustomFormat = "yyyy/MM/dd";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(2, 304);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(162, 32);
-            this.dateTimePicker2.TabIndex = 68;
-            this.dateTimePicker2.Value = new System.DateTime(2020, 5, 8, 0, 0, 0, 0);
+            this.dtpAdmission.CustomFormat = "yyyy/MM/dd";
+            this.dtpAdmission.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpAdmission.Location = new System.Drawing.Point(2, 304);
+            this.dtpAdmission.Name = "dtpAdmission";
+            this.dtpAdmission.Size = new System.Drawing.Size(162, 32);
+            this.dtpAdmission.TabIndex = 68;
+            this.dtpAdmission.Value = new System.DateTime(2020, 5, 8, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -357,48 +361,48 @@
             this.label1.TabIndex = 72;
             this.label1.Text = "Etablissement :";
             // 
-            // textBox1
+            // txtEtablissement
             // 
-            this.textBox1.Location = new System.Drawing.Point(191, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(181, 32);
-            this.textBox1.TabIndex = 70;
+            this.txtEtablissement.Location = new System.Drawing.Point(191, 41);
+            this.txtEtablissement.Name = "txtEtablissement";
+            this.txtEtablissement.Size = new System.Drawing.Size(181, 32);
+            this.txtEtablissement.TabIndex = 70;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = System.Drawing.Color.Azure;
-            this.label2.Location = new System.Drawing.Point(2, 130);
+            this.label2.Location = new System.Drawing.Point(2, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 26);
             this.label2.TabIndex = 71;
             this.label2.Text = "Matricule";
             // 
-            // textBox2
+            // NTtxtMatricule
             // 
-            this.textBox2.Location = new System.Drawing.Point(2, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 32);
-            this.textBox2.TabIndex = 69;
+            this.NTtxtMatricule.Location = new System.Drawing.Point(2, 165);
+            this.NTtxtMatricule.Name = "NTtxtMatricule";
+            this.NTtxtMatricule.Size = new System.Drawing.Size(181, 32);
+            this.NTtxtMatricule.TabIndex = 69;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.ForeColor = System.Drawing.Color.Azure;
-            this.label3.Location = new System.Drawing.Point(187, 78);
+            this.label3.Location = new System.Drawing.Point(189, 76);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 26);
             this.label3.TabIndex = 74;
             this.label3.Text = "Departement :";
             // 
-            // textBox3
+            // txtDepartement
             // 
-            this.textBox3.Location = new System.Drawing.Point(192, 107);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 32);
-            this.textBox3.TabIndex = 73;
+            this.txtDepartement.Location = new System.Drawing.Point(194, 105);
+            this.txtDepartement.Name = "txtDepartement";
+            this.txtDepartement.Size = new System.Drawing.Size(181, 32);
+            this.txtDepartement.TabIndex = 73;
             // 
             // btnDelete
             // 
@@ -457,26 +461,44 @@
             this.btnPrint.Text = "Print";
             this.btnPrint.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // imgMatricule
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Location = new System.Drawing.Point(207, 189);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(165, 99);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 75;
-            this.pictureBox2.TabStop = false;
+            this.imgMatricule.BackColor = System.Drawing.Color.White;
+            this.imgMatricule.Location = new System.Drawing.Point(194, 240);
+            this.imgMatricule.Name = "imgMatricule";
+            this.imgMatricule.Size = new System.Drawing.Size(165, 77);
+            this.imgMatricule.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMatricule.TabIndex = 75;
+            this.imgMatricule.TabStop = false;
+            // 
+            // lbMatricule
+            // 
+            this.lbMatricule.AutoSize = true;
+            this.lbMatricule.BackColor = System.Drawing.Color.Transparent;
+            this.lbMatricule.ForeColor = System.Drawing.Color.Azure;
+            this.lbMatricule.Location = new System.Drawing.Point(189, 205);
+            this.lbMatricule.Name = "lbMatricule";
+            this.lbMatricule.Size = new System.Drawing.Size(170, 26);
+            this.lbMatricule.TabIndex = 76;
+            this.lbMatricule.Text = "Code Matricule :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.ForeColor = System.Drawing.Color.Azure;
-            this.label4.Location = new System.Drawing.Point(202, 150);
+            this.label4.Location = new System.Drawing.Point(189, 136);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 26);
-            this.label4.TabIndex = 76;
-            this.label4.Text = "Code Matricule :";
+            this.label4.Size = new System.Drawing.Size(62, 26);
+            this.label4.TabIndex = 78;
+            this.label4.Text = "Sex :";
+            // 
+            // txtSex
+            // 
+            this.txtSex.Location = new System.Drawing.Point(194, 165);
+            this.txtSex.Name = "txtSex";
+            this.txtSex.Size = new System.Drawing.Size(181, 32);
+            this.txtSex.TabIndex = 77;
             // 
             // Frmetudiant
             // 
@@ -487,22 +509,24 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(1203, 472);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.txtSex);
+            this.Controls.Add(this.lbMatricule);
+            this.Controls.Add(this.imgMatricule);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDepartement);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtEtablissement);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.NTtxtMatricule);
+            this.Controls.Add(this.dtpAdmission);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpNaissance);
             this.Controls.Add(this.lblAt);
             this.Controls.Add(this.lblTel);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lblLastName);
-            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.picRemover);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -516,29 +540,35 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblBornDate);
             this.Controls.Add(this.lblFirstName);
-            this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.txtNom);
+            this.Controls.Add(this.imgPhoto);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Frmetudiant";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student";
+            this.Load += new System.EventHandler(this.Frmetudiant_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgPhoto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMatricule)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
+        private void Frmetudiant_Load(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNaissance;
         private System.Windows.Forms.Label lblAt;
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Button picRemover;
         private System.Windows.Forms.Label lblPhoto;
         private System.Windows.Forms.Button btnSearch;
@@ -549,26 +579,28 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblBornDate;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtNom;
+        private System.Windows.Forms.PictureBox imgPhoto;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpAdmission;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEtablissement;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox NTtxtMatricule;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDepartement;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox imgMatricule;
+        private System.Windows.Forms.Label lbMatricule;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtSex;
     }
 }
 

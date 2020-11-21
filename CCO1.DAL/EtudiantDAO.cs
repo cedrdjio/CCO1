@@ -48,9 +48,9 @@ namespace CCO1.DAL
             var oldIndex = Etudiant.IndexOf(oldProduct);
             var newIndex = Etudiant.IndexOf(newProduct);
             if (oldIndex < 0)
-                throw new KeyNotFoundException("The product doesn't exists !");
+                throw new KeyNotFoundException("The etudiant doesn't exists !");
             if (newIndex >= 0 && oldIndex != newIndex)
-                throw new DuplicateNameException("This product reference already exists !");
+                throw new DuplicateNameException("This etudiant reference already exists !");
             Etudiant[oldIndex] = newProduct;
             Save();
         }
@@ -59,7 +59,7 @@ namespace CCO1.DAL
         {
             var index = Etudiant.IndexOf(etudiant);
             if (index >= 0)
-                throw new DuplicateNameException("This product reference already exists !");
+                throw new DuplicateNameException("This etudiant reference already exists !");
             Etudiant.Add(etudiant);
             Save();
         }
@@ -75,7 +75,7 @@ namespace CCO1.DAL
 
         public void Remove(Etudiant etudiant)
         {
-            Etudiant.Remove(etudiant);//base sur Product.Equals redefini
+            Etudiant.Remove(etudiant);
             Save();
         }
 

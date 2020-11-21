@@ -27,7 +27,7 @@ namespace CCO1.Winforms
 
         private void newStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new Frmetudiant();
+            Form f = new fr();
             f.MdiParent = this;
             f.Show();
             f.WindowState = FormWindowState.Maximized;

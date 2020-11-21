@@ -12,28 +12,42 @@ namespace CCO1.BO
         public string Prenom { get; set; }
         public string DateNaissance { get; set; }
         public string DateAdmission { get; set; }
-        public string Matricule { get; set; }
-        public string Departement { get; set; }
+        public byte[] Matricule { get; set; }
+        public int Telephone  {get;set;}
+        public string  Emails{get;set;}
+        public string Etablissement {get;set;}
+         public string Departement { get; set; }
+        public byte[] Photo { get; set; }
+        public string Sex { get; set; }
 
 
         public Etudiant()
         {
 
         }
-
-        public Etudiant(string nom, string prenom, string dateNaissance, string dateAdmission, string matricule, string departement)
+        public Etudiant(string Nom)
         {
-            Nom = nom;
+
+        }
+
+        public Etudiant(string nom, string prenom, string dateNaissance, string dateAdmission, byte[] matricule, int telephone, string emails, string etablissement, string departement, byte[] photo, string sex) : this(nom)
+        {
             Prenom = prenom;
-           DateNaissance = dateNaissance ;
+            DateNaissance = dateNaissance;
             DateAdmission = dateAdmission;
             Matricule = matricule;
-            Departement = departement; 
+            Telephone = telephone;
+            Emails = emails;
+            Etablissement = etablissement;
+            Departement = departement;
+            Photo = photo;
+            Sex = sex;
+        }
 
-    }
+       
         public override bool Equals(object obj)
         {
-            return obj is Etudiant  etudiant &&
+            return obj is Etudiant etudiant &&
                    Nom.Equals(etudiant.Nom, StringComparison.OrdinalIgnoreCase);
         }
 

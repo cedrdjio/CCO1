@@ -44,8 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EtablissementDAO.cs" />
     <Compile Include="EtudiantDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TypingException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CCO1.BO1\CCO1.BO.csproj">
