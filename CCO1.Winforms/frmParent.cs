@@ -20,17 +20,22 @@ namespace CCO1.Winforms
         private void newUniversityToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form f = new frmEtblissement();
-            f.MdiParent = this;
+            //f.MdiParent = this;
             f.Show();
-            f.WindowState = FormWindowState.Maximized;
+            //f.WindowState = FormWindowState.Maximized;
         }
 
         private void newStudentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form f = new fr();
-            f.MdiParent = this;
+            Form f = new WinForms.Frmetudiant();
+            //f.MdiParent = this;
             f.Show();
-            f.WindowState = FormWindowState.Maximized;
+            //f.WindowState = FormWindowState.Maximized;
+        }
+
+        private void frmParent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

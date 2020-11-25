@@ -1,25 +1,26 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace CCO1.DAL
+namespace CCO1.BLL
 {
-    [Serializable]
-    internal class TypingException : Exception
+    public class TypingException : Exception
     {
-        public TypingException()
+        public TypingException() : base()
         {
+
         }
 
         public TypingException(string message) : base(message)
         {
+
         }
 
         public TypingException(string message, Exception innerException) : base(message, innerException)
         {
-        }
 
-        protected TypingException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
         }
     }
 }

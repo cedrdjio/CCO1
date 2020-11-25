@@ -49,6 +49,10 @@
             this.lblName = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBP = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -219,27 +223,25 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.ForeColor = System.Drawing.Color.Azure;
-            this.lblEmail.Location = new System.Drawing.Point(3, 169);
+            this.lblEmail.Location = new System.Drawing.Point(7, 133);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(80, 26);
             this.lblEmail.TabIndex = 25;
             this.lblEmail.Text = "Email :";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(8, 213);
+            this.txtEmail.Location = new System.Drawing.Point(12, 162);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(191, 32);
             this.txtEmail.TabIndex = 24;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblTel
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.BackColor = System.Drawing.Color.Transparent;
             this.lblTel.ForeColor = System.Drawing.Color.Azure;
-            this.lblTel.Location = new System.Drawing.Point(3, 92);
+            this.lblTel.Location = new System.Drawing.Point(7, 75);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(53, 26);
             this.lblTel.TabIndex = 23;
@@ -247,7 +249,7 @@
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(8, 121);
+            this.txtTel.Location = new System.Drawing.Point(12, 99);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(191, 32);
             this.txtTel.TabIndex = 22;
@@ -257,7 +259,7 @@
             this.lblName.AutoSize = true;
             this.lblName.BackColor = System.Drawing.Color.Transparent;
             this.lblName.ForeColor = System.Drawing.Color.Azure;
-            this.lblName.Location = new System.Drawing.Point(3, 15);
+            this.lblName.Location = new System.Drawing.Point(3, 10);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(215, 26);
             this.lblName.TabIndex = 21;
@@ -265,7 +267,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(8, 44);
+            this.txtName.Location = new System.Drawing.Point(8, 39);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(191, 32);
             this.txtName.TabIndex = 20;
@@ -280,6 +282,42 @@
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.Azure;
+            this.label2.Location = new System.Drawing.Point(7, 200);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(139, 26);
+            this.label2.TabIndex = 36;
+            this.label2.Text = "Localisation :";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(12, 229);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(191, 32);
+            this.textBox1.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.Azure;
+            this.label3.Location = new System.Drawing.Point(7, 266);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(54, 26);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "BP :";
+            // 
+            // textBP
+            // 
+            this.textBP.Location = new System.Drawing.Point(12, 290);
+            this.textBP.Name = "textBP";
+            this.textBP.Size = new System.Drawing.Size(191, 32);
+            this.textBP.TabIndex = 37;
+            // 
             // frmEtblissement
             // 
             this.AcceptButton = this.btnSave;
@@ -288,6 +326,10 @@
             this.BackColor = System.Drawing.Color.MediumPurple;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(934, 488);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBP);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
@@ -338,5 +380,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBP;
     }
 }

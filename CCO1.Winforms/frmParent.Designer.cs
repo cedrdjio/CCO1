@@ -59,14 +59,14 @@
             // newUniversityToolStripMenuItem
             // 
             this.newUniversityToolStripMenuItem.Name = "newUniversityToolStripMenuItem";
-            this.newUniversityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newUniversityToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.newUniversityToolStripMenuItem.Text = "New etablissement";
             this.newUniversityToolStripMenuItem.Click += new System.EventHandler(this.newUniversityToolStripMenuItem_Click);
             // 
             // newStudentToolStripMenuItem
             // 
             this.newStudentToolStripMenuItem.Name = "newStudentToolStripMenuItem";
-            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newStudentToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.newStudentToolStripMenuItem.Text = "New etudiant";
             this.newStudentToolStripMenuItem.Click += new System.EventHandler(this.newStudentToolStripMenuItem_Click);
             // 
@@ -95,6 +95,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmParent_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

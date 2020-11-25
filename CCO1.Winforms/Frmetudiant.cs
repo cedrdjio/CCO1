@@ -19,15 +19,15 @@ namespace CCO1.WinForms
         private Action callback;
         private Etudiant oldEtudiant;
         private EtudiantBLO etudiantBLO;
-        Etablissement etbli;
+       
 
 
 
         public Frmetudiant()
         {
-           InitializeComponent();
+            InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
-           etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
+            etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
         }
         private void loadData()
@@ -50,7 +50,7 @@ namespace CCO1.WinForms
         }
         public Frmetudiant(Etudiant etudiant, Action callback) : this(callback)
         {
-            this.oldEtudiant= etudiant;
+            this.oldEtudiant = etudiant;
             txtNom.Text = etudiant.Nom;
             txtPrenom.Text = etudiant.Prenom;
             dtpNaissance.Text = etudiant.DateNaissance.ToString();
@@ -81,14 +81,48 @@ namespace CCO1.WinForms
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+       
+
+        private void picRemover_Click(object sender, EventArgs e)
+        {
+            imgPhoto.ImageLocation = null;
+        }
+
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        {
+            btnEdit_Click_1(sender, e);
+        }
+        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+
+            if (!char.IsDigit(ch) && ch != 8)
+                e.Handled = true;
+        }
+
+        private void FrmStudent_Load(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            loadData();
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnEdit_Click_1(sender, e);
+
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
         {
             try
             {
                 Etudiant newEtudiant = new Etudiant(
                 txtNom.Text,
                 txtPrenom.Text,
-                
                 dtpNaissance.Text,
                 dtpAdmission.Text,
                 !string.IsNullOrEmpty(imgMatricule.ImageLocation) ? File.ReadAllBytes(imgMatricule.ImageLocation) : this.oldEtudiant?.Matricule,
@@ -99,15 +133,9 @@ namespace CCO1.WinForms
                 !string.IsNullOrEmpty(imgPhoto.ImageLocation) ? File.ReadAllBytes(imgPhoto.ImageLocation) : this.oldEtudiant?.Photo,
                 txtSex.Text
                 );
-                   //etbli.NomEtablissement,
-                   //etbli.AddresMail,
-                   //etbli.Localisation,
-                   //etbli.BP,
-                   //etbli.Localisation,
-                   //etbli.Logo,
-                   //etbli.Telephone ,
-                   
-              EtudiantBLO etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
+                dataGridView1.DataSource = newEtudiant;
+
+                EtudiantBLO etudiantBLO = new EtudiantBLO(ConfigurationManager.AppSettings["DbFolder"]);
 
                 if (this.oldEtudiant == null)
                     etudiantBLO.CreateEtudiant(newEtudiant);
@@ -131,7 +159,7 @@ namespace CCO1.WinForms
 
                 txtNom.Clear();
                 txtPrenom.Clear();
-                dtpNaissance.Value =  DateTime.Now;
+                dtpNaissance.Value = DateTime.Now;
                 dtpAdmission.Value = DateTime.Now;
                 txtTel.Clear();
                 txtEmail.Clear();
@@ -176,8 +204,7 @@ namespace CCO1.WinForms
             }
             catch (Exception ex)
             {
-              //  ex.WriteToFile();
-
+                ex.WriteToFile();
                 MessageBox.Show(
                 "An error occured please try again",
                 "Error",
@@ -186,55 +213,31 @@ namespace CCO1.WinForms
                 );
 
             }
+        
         }
 
-        //private void checkForm()
-        //{
-        //    string text = string.Empty;
-        //    txtNom.BackColor = Color.White;
-        //    txtPrenom.BackColor = Color.White;
-
-        //    if (string.IsNullOrWhiteSpace(txtNom.Text) || string.IsNullOrWhiteSpace(txtPrenom.Text))
-        //    {
-        //        text += "- FirstName or LastName can't be empty !\n";
-        //        txtNom.BackColor = Color.LightPink;
-        //        txtPrenom.BackColor = Color.LightPink;
-
-        //    }
-
-        //    if (radioButton1.Checked == false && radioButton2.Checked == false)
-        //    {
-        //        text += "- Sex can't be empty !\n";
-
-        //    }
-
-        //    if (string.IsNullOrWhiteSpace(txtTel.Text))
-        //    {
-        //        text += "- Telephone can't be empty !\n";
-        //        txtTel.BackColor = Color.LightPink;
-
-        //    }
-        //    if (string.IsNullOrWhiteSpace(txtAt.Text))
-        //    {
-        //        text += "- Place of birth can't be empty !\n";
-        //        txtAt.BackColor = Color.LightPink;
-
-        //    }
-        //    if (!string.IsNullOrEmpty(text))
-        //        throw new TypingException(text);
-        //}
-
-        private void picRemover_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            imgPhoto.ImageLocation = null;
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                if (
+                    MessageBox.Show
+                    (
+                        "Do you really want to delete this students(s)?",
+                        "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question
+                    ) == DialogResult.Yes
+                )
+                {
+                    for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
+                    {
+                        etudiantBLO.DeleteEtudiant(dataGridView1.SelectedRows[i].DataBoundItem as Etudiant);
+                    }
+                    loadData();
+                }
+            }
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
-        {
-            btnEdit_Click(sender, e);
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnEdit_Click_1(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
             {
@@ -249,110 +252,8 @@ namespace CCO1.WinForms
                     f.Show();
                     f.WindowState = FormWindowState.Maximized;
                 }
-
             }
-
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows.Count > 0)
-            {
-                if (MessageBox.Show("Confirmation ? ",
-                    "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    for (int i = 0; i < dataGridView1.SelectedRows.Count; i++)
-                    {
-                        etudiantBLO.DeleteEtudiant(dataGridView1.SelectedRows[i].DataBoundItem as Etudiant);
-                    }
-                    loadData();
-
-
-                }
-
             }
-
-        }
-
-        ////private void btnPrint_Click(object sender, EventArgs e)
-        ////{
-        ////    List<StudentListPrint> items = new List<StudentListPrint>();
-        ////    for (int i = 0; i < dataGridView1.Rows.Count; i++) //pour imprimer ce qui a etait selectionne dans la grille
-        ////    {
-        ////        Student p = dataGridView1.Rows[i].DataBoundItem as Student;
-        ////        items.Add
-        ////          (
-        ////              new StudentListPrint
-        ////              (
-        ////                  p.FirstName,
-        ////                  p.LastName,
-        ////                  p.BornOn,
-        ////                  p.BornAt,
-        ////                  p.Photo,
-        ////                  p.Sexe,
-        ////                  p.Email,
-        ////                  p.Tel
-        ////              )
-        ////          );
-        ////    }
-        ////    Form f = new FrmPreview("StudentCard.rdlc",items);
-        ////    f.Show();
-
-        ////}
-
-        private void txtTel_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            char ch = e.KeyChar;
-
-            if (!char.IsDigit(ch) && ch != 8)
-                e.Handled = true;
-        }
-
-        private void FrmStudent_Load(object sender, EventArgs e)
-        {
-            loadData();
-        }
-
-        private void txtSearch_TextChanged(object sender, EventArgs e)
-        {
-            loadData();
-        }
-
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            btnEdit_Click(sender, e);
-
-        }
-
-        //private void btnPrint_Click(object sender, EventArgs e)
-        //{
-        //    List<StudentListPrint> items = new List<StudentListPrint>();
-        ////    for (int i = 0; i < dataGridView1.Rows.Count; i++) //pour imprimer ce qui a etait selectionne dans la grille
-        ////    {
-        ////        Student p = dataGridView1.Rows[i].DataBoundItem as Student;
-        ////        items.Add
-        ////          (
-        ////              new StudentListPrint
-        ////              (
-        ////                  p.Name,
-        ////                  p.FirstName,
-        ////                  p.LastName,
-        ////                  p.BornOn,
-        ////                  p.BornAt,
-        ////                  p.Photo,
-        ////                  p.Sexe,
-        ////                  p.EmailS,
-        ////                  p.Email,
-        ////                  p.Tel,
-        ////                  p.TelS,
-        ////                  p.Logo
-        ////              )
-        ////          );
-        ////    }
-        //    Form f = new StudentList("StudentsCard.rdlc", items);
-        //    f.Show();
-
-        //}
-    }
+    } 
 }
 

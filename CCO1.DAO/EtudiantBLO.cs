@@ -26,13 +26,13 @@ namespace CCO1.BLL
         }
 
 
-        public IEnumerable<Etudiant> GetAllProducts()
+        public IEnumerable<Etudiant> GetAllEtudiant()
         {
             return etudiantRepo.Find();
         }
 
 
-        public IEnumerable<Etudiant> GetByReference(string name)
+        public IEnumerable<Etudiant> GetByName(string name)
         {
             return etudiantRepo.Find(x => x.Nom == name);
         }

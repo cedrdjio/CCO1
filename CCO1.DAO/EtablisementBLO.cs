@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CC01.BLL
+namespace CCO1.BLL
 {
     public class EtablissementBLO
     {
@@ -16,15 +16,15 @@ namespace CC01.BLL
         {
             EtablissementRepo = new EtablissementDAO(dbFolder);
         }
-        public void CreateUniversity(Etablissement Etablissement)
+        public void CreateEtablissement(Etablissement Etablissement)
         {
             EtablissementRepo.Add(Etablissement);
         }
-        public void DeleteUniversity(Etablissement Etablissement)
+        public void DeleteEtablissement(Etablissement Etablissement)
         {
             EtablissementRepo.Remove(Etablissement);
         }
-        public IEnumerable<Etablissement> GetAllUniversitys()
+        public IEnumerable<Etablissement> GetAllEtablissement()
         {
             return EtablissementRepo.Find();
         }
@@ -38,7 +38,7 @@ namespace CC01.BLL
             return EtablissementRepo.Find(predicate);
         }
 
-        public void EditUniversity(Etablissement oldEtablissement, Etablissement newEtablissement)
+        public void EditEtablissement(Etablissement oldEtablissement, Etablissement newEtablissement)
         {
             EtablissementRepo.Set(oldEtablissement, newEtablissement);
         }

@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="common.cs" />
     <Compile Include="EtablissementDAO.cs" />
     <Compile Include="EtudiantDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

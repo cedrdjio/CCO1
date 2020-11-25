@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-
 namespace CCO1.BO
 {
+    [Serializable]
     public class Etudiant
     {
         public string Nom { get; set; }
