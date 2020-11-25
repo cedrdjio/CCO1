@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CCO1.BO
 {
+    [Serializable]
     public class Etablissement
     {
         public string NomEtablissement { get; set; }
