@@ -46,7 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CCO1.BO1\CCO1.BO.csproj">
+    <ProjectReference Include="..\CCO1.BO\CCO1.BO.csproj">
       <Project>{4053f37d-a7cb-410f-95b7-3d192fb21046}</Project>
       <Name>CCO1.BO</Name>
     </ProjectReference>
